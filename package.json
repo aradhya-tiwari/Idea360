@@ -1,0 +1,17 @@
+{
+  "name": "idea360",
+  "type": "module",
+  "workspaces": [
+    "client",
+    "workers"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
