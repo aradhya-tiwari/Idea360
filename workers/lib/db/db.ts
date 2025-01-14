@@ -26,7 +26,7 @@ export function DB(id: string, authToken: string, env: "DEV" | "STAGE" | "PRODUC
         schema = orgSchema
     }
     else {
-        console.log("+++++++++++++++++++++++++++++++++++Executed+++++++++++++++++", url, (schema ? "yes Schema" : "no Schema"))
+        console.log("+++++++++++++++++++++++++Executed++++++++++++++++++++++++++", url, (schema ? "yes Schema" : "no Schema"))
         throw "problem while creating database in DB() function"
     }
 

@@ -1,1 +1,1 @@
-GET http://localhost:8787/org123/users
+GET http://localhost:8787/org/users 
