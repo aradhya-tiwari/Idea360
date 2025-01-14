@@ -5,6 +5,17 @@
     "client",
     "workers"
   ],
+  "scripts": {
+    "db": "turso dev --db-file aa/db/database.db",
+    "db:push:internal": "npx drizzle-kit push --config ./workers/drizzleInternal.config.ts",
+    "db:push:org": "npx drizzle-kit push --config ./workers/drizzleOrg.config.ts",
+    "db:migrate:internal": "npx drizzle-kit migrate --config ./workers/drizzleInternal.config.ts",
+    "db:migrate:org": "npx drizzle-kit migrate --config ./workers/drizzleOrg.config.ts",
+    "db:generate:internal": "npx drizzle-kit generate --config ./workers/drizzleInternal.config.ts",
+    "db:generate:org": "npx drizzle-kit generate --config ./workers/drizzleOrg.config.ts",
+    "db:dev:org": "wsl & turso dev --db-file ./workers/demo/db/org.db --port 8090",
+    "db:dev:internal": "wsl & turso  dev --db-file ./workers/demo/db/internal.db"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -12,6 +23,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "axios": "^1.7.9"
+    "axios": "^1.7.9",
+    "i": "^0.3.7"
   }
 }

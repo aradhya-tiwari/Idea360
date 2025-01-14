@@ -4,8 +4,8 @@ compatibility_date = "2024-12-23"
 
 # compatibility_flags = [ "nodejs_compat" ]
 
-# [vars]
-# MY_VAR = "my-variable"
+[vars]
+ENV = "DEV"
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"

@@ -1,9 +1,5 @@
-import { Hono } from 'hono'
+import app from "./app"
+import { hc } from "hono/client"
 
-const app = new Hono()
-
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
-
+export type appType = typeof app
 export default app
