@@ -3,18 +3,19 @@
   "type": "module",
   "workspaces": [
     "client",
-    "workers"
+    "workers",
+    "packages/*"
   ],
   "scripts": {
     "db": "turso dev --db-file aa/db/database.db",
-    "db:push:internal": "npx drizzle-kit push --config ./workers/drizzleInternal.config.ts",
-    "db:push:org": "npx drizzle-kit push --config ./workers/drizzleOrg.config.ts",
-    "db:migrate:internal": "npx drizzle-kit migrate --config ./workers/drizzleInternal.config.ts",
-    "db:migrate:org": "npx drizzle-kit migrate --config ./workers/drizzleOrg.config.ts",
-    "db:generate:internal": "npx drizzle-kit generate --config ./workers/drizzleInternal.config.ts",
-    "db:generate:org": "npx drizzle-kit generate --config ./workers/drizzleOrg.config.ts",
-    "db:dev:org": "wsl & turso dev --db-file ./workers/demo/db/org.db --port 8090",
-    "db:dev:internal": "wsl & turso  dev --db-file ./workers/demo/db/internal.db"
+    "db:push:internal": "npx drizzle-kit push --config ./workers/lib/db/drizzle-internal.config.ts",
+    "db:push:org": "npx drizzle-kit push --config ./workers/lib/db/drizzle-org.config.ts",
+    "db:migrate:internal": "npx drizzle-kit migrate --config ./workers/lib/db/drizzle-internal.config.ts",
+    "db:migrate:org": "npx drizzle-kit migrate --config ./workers/lib/db/drizzle-org.config.ts",
+    "db:generate:internal": "npx drizzle-kit generate --config ./workers/lib/db/drizzle-internal.config.ts",
+    "db:generate:org": "npx drizzle-kit generate --config ./workers/lib/db/drizzle-internal.config.ts",
+    "db:dev:org": "wsl & turso dev --db-file ./packages/common/db/org.db --port 8090",
+    "db:dev:internal": "wsl & turso  dev --db-file ./packages/commone/db/internal.db"
   },
   "devDependencies": {
     "@types/bun": "latest"

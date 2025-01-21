@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import { defineConfig } from 'drizzle-kit';
 export default defineConfig({
-    out: './workers/src/lib/migrations/db/',
-    schema: './workers/lib/db/schemaInternal.ts',
+    out: './workers/lib/db/migrations/org',
+    schema: './workers/lib/db/schema-org.ts',
     dialect: 'turso',
 
     dbCredentials: {
-        url: "file:./workers/demo/db/internal.db",
+        url: "file:./packages/common/org.db",
         authToken: process.env.TURSO_AUTH_TOKEN!,
     },
 });

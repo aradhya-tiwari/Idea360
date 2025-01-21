@@ -1,22 +1,31 @@
 import { Client } from "@libsql/client"
 import { drizzle, LibSQLDatabase } from "drizzle-orm/libsql"
-import type * as dbSchema from "./db/schemaInternal"
-import type * as orgSchema from "./db/schemaOrg"
+import { internalSchema } from "@idea360/db"
+import { orgSchema } from "@idea360/db"
 export type Env = {
     Variables: {
-        db: LibSQLDatabase<typeof dbSchema> & {
+        db: Promise<LibSQLDatabase<typeof dbSchema> & {
             $client: Client;
-        },
-        org: LibSQLDatabase<typeof orgSchema> & {
+        }>,
+        org: (id: string) => Promise<LibSQLDatabase<typeof orgSchema> & {
             $client: Client;
-        },
-        dbSchema: typeof dbSchema
+        }>,
+        internalSchema: typeof internalSchema
         orgSchema: typeof orgSchema
     },
     Bindings: {
-        ENV: "DEV" | "PRODUCTION",
+        ENV: "DEV" | "PROD" | "STAGE",
         TURSO_URL: string,
         TURSO_TOKEN: string
+    }
+}
+
+export type respBody = {
+    success: boolean,
+    data?: Array<any>,
+    error?: {
+        msg: string,
+        err: string
     }
 }
 

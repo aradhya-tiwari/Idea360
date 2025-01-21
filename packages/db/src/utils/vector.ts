@@ -17,20 +17,3 @@ export const float32Array = customType<{
         return sql`vector32(${JSON.stringify(value)})`;
     },
 });
-
-
-import { drizzle } from "drizzle-orm/libsql";
-import { createClient } from "@libsql/client";
-
-const client = createClient({
-    url: "process.env.TURSO_DATABASE_URL!",
-    authToken: "process.env.TURSO_AUTH_TOKEN",
-});
-
-const db = drizzle(client);
-
-await db.run(sql`
-  CREATE INDEX IF NOT EXISTS vector_index
-  ON vector_table(vector)
-  USING vector_cosine(3)
-`);

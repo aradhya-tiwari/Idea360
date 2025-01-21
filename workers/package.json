@@ -1,9 +1,11 @@
 {
-  "name": "workers",
+  "name": "@idea360/workers",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify"
   },
+  "module": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "@libsql/client": "^0.14.0",
     "@types/bun": "^1.1.14",
@@ -11,7 +13,8 @@
     "drizzle-seed": "^0.3.0",
     "drizzle-zod": "^0.6.1",
     "hono": "^4.6.14",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "@idea360/db": "workspace:*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241218.0",

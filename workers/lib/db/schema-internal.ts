@@ -1,4 +1,5 @@
 import { int, integer, sqliteTable, text, SQLiteBlobJson } from "drizzle-orm/sqlite-core";
+import { float32Array } from "@idea360/db";
 
 export let usersTable = sqliteTable("users", {
     id: int().primaryKey({ autoIncrement: true, }),
