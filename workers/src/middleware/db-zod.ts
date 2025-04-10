@@ -2,7 +2,7 @@ import { createMiddleware, createFactory } from "hono/factory";
 import { Client, createClient } from "@libsql/client";
 import { Env } from "$lib/types";
 import { drizzle, LibSQLDatabase } from "drizzle-orm/libsql";
-import * as internalSchema from "$lib/db/schema-org"
+import * as internalSchema from "$lib/db/schema-internal"
 import * as orgSchema from "$lib/db/schema-org"
 import { sql } from "drizzle-orm";
 import { DB } from "@idea360/db";
@@ -13,7 +13,7 @@ export let db = createMiddleware<Env>(async (c, next) => {
     const dbb = DB({ type: "internal", id: "" }, c.env.TURSO_TOKEN, c.env.ENV)
     if (dbb)
         // @ts-ignore because it has to be 
-        c.set("db", dbb)
+        c.set("internal", dbb)
     else
         throw "error while creating connecting to Internal database... /from middleware, db not set"
 

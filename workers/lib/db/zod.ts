@@ -1,4 +1,4 @@
-import { } from './schema-internal'
+import { OrgTable } from './schema-internal'
 import { usersTable, ideasTable } from "./schema-org"
 
 import { createInsertSchema, createUpdateSchema, createSelectSchema, } from "drizzle-zod"
@@ -11,7 +11,7 @@ export const insertOrg = createInsertSchema(ideasTable)
 export const updateOrg = createUpdateSchema(ideasTable)
 export const selectOrg = createSelectSchema(ideasTable)
 
-
+export const updateOrgInternal = createUpdateSchema(OrgTable)
 // export const insertUs = createInsertSchema(orgSchema.ideasTable)
 // export const updateOrg = createUpdateSchema(orgSchema.ideasTable)
 // export const selectOrg = createSelectSchema(orgSchema.ideasTable)

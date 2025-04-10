@@ -1,8 +1,8 @@
 import { createApp } from "../lib/imports/createApp"
-import { org } from "./routes/org/handlers/org.index"
+import { org } from "./routes/[orgId]/routes.index"
 
 const app = createApp()
-    .route("/:org/org", org)
+    .route("/:orgId", org)
     .get("/", c => c.text("Hii"))
 // .basePath("/:orgId")
 

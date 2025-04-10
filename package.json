@@ -15,7 +15,7 @@
     "db:generate:internal": "npx drizzle-kit generate --config ./workers/lib/db/drizzle-internal.config.ts",
     "db:generate:org": "npx drizzle-kit generate --config ./workers/lib/db/drizzle-internal.config.ts",
     "db:dev:org": "wsl & turso dev --db-file ./packages/common/db/org.db --port 8090",
-    "db:dev:internal": "wsl & turso  dev --db-file ./packages/commone/db/internal.db"
+    "db:dev:internal": "wsl & turso  dev --db-file ./packages/common/db/internal.db"
   },
   "devDependencies": {
     "@types/bun": "latest"

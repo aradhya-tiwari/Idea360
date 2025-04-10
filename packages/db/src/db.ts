@@ -5,7 +5,7 @@ import { orgSchema } from "@idea360/workers"
 
 type db = {
     type: "internal" | "org",
-    id: string
+    id?: string
 }
 
 export async function DB(db: db, authToken: string, env: "DEV" | "STAGE1" | "STAGE2" | "PROD") {
